@@ -45,31 +45,7 @@ class MorseTree:
             if char in self.dict:
                 encoded_text += self.dict[char] + ' '
         return encoded_text.strip()
-    """
-    def encode(self, text):
-        encoded = ""
-        for c in text.upper():
-            node = self.root
-            if c == " ":
-                encoded += "/"
-                continue
-            code = self._find_code(node, c)
-            encoded += code + " "
-        return encoded.strip()
 
-    def _find_code(self, node, value):
-        if node is None:
-            return ""
-        if node.value == value:
-            return ""
-        left_code = self._find_code(node.left, value)
-        if left_code is not None:
-            return "." + left_code
-        right_code = self._find_code(node.right, value)
-        if right_code is not None:
-            return "-" + right_code
-        return None
-    """
     def decode(self, code):
         decoded = ""
         for word in code.split("/"):
@@ -87,7 +63,6 @@ class MorseTree:
 
 # Example usage
 tree = MorseTree()
-
 dec = '-.--.-'
 enc = ')'
 decode_message = tree.decode(dec)
