@@ -3,6 +3,18 @@ class Node:
             self.value = value
             self.left = None
             self.right = None
+        def getValue(self):
+            return self.value
+        def getLeft(self):
+            return self.left
+        def getRight(self):
+            return self.right
+        def setValue(self,value):
+            self.value = value 
+        def setLeft(self,left):
+            self.left=left
+        def setRight(self,right):
+            self.right=right
 
 class MorseTree:
     
@@ -30,6 +42,12 @@ class MorseTree:
         for letter, code in self.dict.items():
             self.insert(code,letter)
 
+    def is_empty(self):
+        return self.root is None
+    
+    def is_not_empty(self):
+        return self.root is not  None
+    
     def insert(self, code, value):
         node = self.root
         for c in code:
@@ -64,7 +82,7 @@ class MorseTree:
             decoded += " "
         return decoded.strip()
     
-    def find_value(self, code):
+    def find(self, code):
         node = self.root
         for symbol in code:
             if symbol == '.':
@@ -76,7 +94,85 @@ class MorseTree:
                     return None
                 node = node.right
         return node.value
-    
+
+    def isLeft(self,key):
+        if self._get_key_path(key) == 'l':
+            return True
+        return False
+    def isRight(self,key):
+        path = self._get_key_path(key)
+        if  path[:1]== 'r':
+            return True
+        return False
+    def _get_key_path(self, key):
+        # Convert the Morse code string to a path through the tree
+        key_path = ''
+        for char in key:
+            if char == '.':
+                key_path += 'l'
+            else:
+                key_path += 'r'
+        return key_path
+
+    def delete(self, value):
+        # Start at the root of the Morse Tree
+        current_node = self.root
+        parent_node = None
+        value_path = self._get_key_path(value)
+        # Traverse the Morse Tree to find the node that contains the value
+        for char in value_path:
+            if char == 'L': #if char == '.':
+                parent_node = current_node
+                current_node = current_node.left
+            else:
+                parent_node = current_node
+                current_node = current_node.right
+        
+        # If the value is not found in the Morse Tree, return None
+        if current_node is None:
+            return None
+        
+        # If the value is found in the Morse Tree, remove it from the tree and reorganize the tree accordingly
+        if current_node.value == value:
+            # If the node has no children, simply remove it from the tree
+            if current_node.left is None and current_node.right is None:
+                if parent_node is None:
+                    self.root = None
+                elif parent_node.left == current_node:
+                    parent_node.left = None
+                else:
+                    parent_node.right = None
+            # If the node has only one child, replace it with its child
+            elif current_node.left is None:
+                if parent_node is None:
+                    self.root = current_node.right
+                elif parent_node.left == current_node:
+                    parent_node.left = current_node.right
+                else:
+                    parent_node.right = current_node.right
+            elif current_node.right is None:
+                if parent_node is None:
+                    self.root = current_node.left
+                elif parent_node.left == current_node:
+                    parent_node.left = current_node.left
+                else:
+                    parent_node.right = current_node.left
+            # If the node has two children, find the smallest node in the right subtree, replace the current node with it, and remove the smallest node from the right subtree
+            else:
+                smallest_node = current_node.right
+                while smallest_node.left is not None:
+                    parent_node = smallest_node
+                    smallest_node = smallest_node.left
+                current_node.value = smallest_node.value
+                current_node.value = smallest_node.value
+                if parent_node.left == smallest_node:
+                    parent_node.left = smallest_node.right
+                else:
+                    parent_node.right = smallest_node.right
+            return current_node.value
+        else:
+            return None
+
     def print_tree(self, node=None, prefix=''):
         if not node:
             node = self.root
@@ -87,18 +183,25 @@ class MorseTree:
         if node.right:
             self.print_tree(node.right, prefix + 'r ')
 
-    """
-    def isLeftChild(self):
-        return self.parent and self.parent.left == self
+    def print_morsetree(self,node=None,prefix=None):
+        if node is not None:
+            if node is root:
+                print(prefix + node.value)
+            self.print_morsetree(node.left)
+            key = self._get_key_path(node.value)
+            print( key[:1]+ node.value)
+            self.print_morsetree(node.right)
 
-    def isRightChild(self):
-        return self.parent and self.parent.rightChild == self
 
-    def isRoot(self):
-        return not self.parent
 
-    def isLeaf(self):
-        return not (self.right or self.left)"""
+    
+morse = MorseTree()
+#morse.print_tree()
+#print(morse.delete('.-'))
+print(morse.isLeft('.'))
+#morse.print_tree(morse.root)
+
+
 
 
 
