@@ -1,10 +1,11 @@
 class Node:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+        def __init__(self, value):
+            self.value = value
+            self.left = None
+            self.right = None
 
 class MorseTree:
+    
     def __init__(self):
         self.root = Node('')
         self.dict = { 'A':'.-', 'B':'-...',
@@ -20,12 +21,15 @@ class MorseTree:
                     '4':'....-', '5':'.....', '6':'-....',
                     '7':'--...', '8':'---..', '9':'----.',
                     '0':'-----', ', ':'--..--', '.':'.-.-.-',
-                    '?':'..--..', '/':'-..-.', '-':'-....-',
-                    '(':'-.--.', ')':'-.--.-'}
+                    '?':'..--..','&':'.-...', '/':'-..-.', 
+                    '+': '.-.-.' , '-':'-....-','_':'..--.-',
+                    '(':'-.--.', ')':'-.--.-', ':':'---...',';':'-.-.-.',
+                    '’':'.----.', '”':'.-..-.','$':'...-..-',
+                    '¿': '..-.-','¡': '--...-' ,'!': '-.-.--' }
     
         for letter, code in self.dict.items():
             self.insert(code,letter)
-        
+
     def insert(self, code, value):
         node = self.root
         for c in code:
@@ -59,13 +63,53 @@ class MorseTree:
                 decoded += node.value
             decoded += " "
         return decoded.strip()
+    
+    def find_value(self, code):
+        node = self.root
+        for symbol in code:
+            if symbol == '.':
+                if node.left is None:
+                    return None
+                node = node.left
+            elif symbol == '-':
+                if node.right is None:
+                    return None
+                node = node.right
+        return node.value
+    
+    def print_tree(self, node=None, prefix=''):
+        if not node:
+            node = self.root
+        if node.value:
+            print(prefix + node.value)
+        if node.left:
+            self.print_tree(node.left, prefix + 'l ')
+        if node.right:
+            self.print_tree(node.right, prefix + 'r ')
+
+    """
+    def isLeftChild(self):
+        return self.parent and self.parent.left == self
+
+    def isRightChild(self):
+        return self.parent and self.parent.rightChild == self
+
+    def isRoot(self):
+        return not self.parent
+
+    def isLeaf(self):
+        return not (self.right or self.left)"""
+
+morse = MorseTree()
+
+if __name__ == "__main__":
+    e = morse.encode('us') 
+    print('%s' % e)
+    d = morse.decode(e)
+    assert morse.encode('us') == '..- ...', "Should be ..-" 
+    assert morse.decode('..- ...') == 'us', "Should be ..-"
 
 
-# Example usage
-tree = MorseTree()
-dec = '-.--.-'
-enc = ')'
-decode_message = tree.decode(dec)
-print(decode_message)  
-encode_message = tree.encode(enc)
-print(encode_message)
+
+
+

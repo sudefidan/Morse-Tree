@@ -83,15 +83,29 @@ class MorseTree:
             code = self._find_code(node, c)
             encoded += code + " "
         return encoded.strip()
+    
+    def find_value(self, code):
+        node = self.root
+        for symbol in code:
+            if symbol == '.':
+                if node.left is None:
+                    return None
+                node = node.left
+            elif symbol == '-':
+                if node.right is None:
+                    return None
+                node = node.right
+        return node.value
 
 
 # Example usage
+# Example usage
 tree = MorseTree()
-
-tree.insert("..........", "21")
-dec = '..........'
-enc = '21'
+tree.insert("...-..-", "$")
+dec = "...-..-"
+enc = "$"
 decode_message = tree.decode(dec)
-#print(decode_message)  
+print(decode_message)  
 encode_message = tree.encode(enc)
 print(encode_message)
+print(tree.find_value('...-..-'))
