@@ -32,7 +32,7 @@ class MorseTree:
                     '1':'.----', '2':'..---', '3':'...--',
                     '4':'....-', '5':'.....', '6':'-....',
                     '7':'--...', '8':'---..', '9':'----.',
-                    '0':'-----', ', ':'--..--', '.':'.-.-.-',
+                    '0':'-----', ',':'--..--', '.':'.-.-.-',
                     '?':'..--..','&':'.-...', '/':'-..-.', 
                     '+': '.-.-.' , '-':'-....-','_':'..--.-',
                     '(':'-.--.', ')':'-.--.-', ':':'---...',';':'-.-.-.',
@@ -48,6 +48,21 @@ class MorseTree:
     def is_not_empty(self):
         return self.root is not  None
     
+    def insert2(self, morse_code, char):
+        #self.left = MorseTree()
+        #self.right = MorseTree()
+        if not morse_code:
+            self.value = char
+            return
+        elif morse_code[0] == '.':
+            if not self.left:
+                self.left = MorseTree()
+            self.left.insert2(morse_code[1:], char)
+        elif morse_code[0] == '-':
+            if not self.right:
+                self.right = MorseTree()
+            self.right.insert2(morse_code[1:], char)
+    
     def insert(self, code, value):
         node = self.root
         for c in code:
@@ -61,6 +76,18 @@ class MorseTree:
                 node = node.right
         node.value = value
 
+    def insert(self,root, word, morse):
+        if len(word) == 0:
+            self.root.morse = morse
+            return
+        if word[0] == '.':
+            if root.left is None:
+                root.left = Node()
+            self.insert(root.left, word[1:], morse)
+        else:
+            if root.right is None:
+                root.right = Node()
+            self.insert(root.right, word[1:], morse)
     def encode(self, text):
         encoded_text = ''
         for char in text.upper():
@@ -94,6 +121,8 @@ class MorseTree:
                     return None
                 node = node.right
         return node.value
+    
+    
 
     def isLeft(self,key):
         if self._get_key_path(key) == 'l':
@@ -198,9 +227,10 @@ class MorseTree:
 morse = MorseTree()
 #morse.print_tree()
 #print(morse.delete('.-'))
-print(morse.isLeft('.'))
+#print(morse.isLeft('.'))
 #morse.print_tree(morse.root)
-
+morse.insert2('.--.-.','@')
+print(morse.find('.--.-.'))
 
 
 
