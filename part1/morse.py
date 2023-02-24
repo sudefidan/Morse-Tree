@@ -3,23 +3,15 @@ class Node:
             self.value = value
             self.left = None
             self.right = None
-        def getValue(self):
-            return self.value
-        def getLeft(self):
-            return self.left
-        def getRight(self):
-            return self.right
-        def setValue(self,value):
-            self.value = value 
-        def setLeft(self,left):
-            self.left=left
-        def setRight(self,right):
-            self.right=right
+
 
 class MorseTree:
     
     def __init__(self):
         self.root = Node('')
+        self.populate()
+    
+    def populate(self):
         self.dict = { 'A':'.-', 'B':'-...',
                     'C':'-.-.', 'D':'-..', 'E':'.',
                     'F':'..-.', 'G':'--.', 'H':'....',
@@ -108,13 +100,7 @@ class MorseTree:
 
 
     
-morse = MorseTree()
-#morse.insert('.--.-.','@')
-
-#print(morse.find('.--.-.'))
-#morse.delete('@')
-#print(morse.find('.--.-.'))
-
+#morse = MorseTree()
 #morse.print_tree(morse.root)
 
 

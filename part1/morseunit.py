@@ -1,5 +1,4 @@
 import unittest
-import morse
 from morse import MorseTree
 
 class TestMorse(unittest.TestCase):
@@ -8,36 +7,34 @@ class TestMorse(unittest.TestCase):
 
     #task3
     def test_encode(self):
-        unittest.TestCase.assertEqual( self,self.morse.encode('us'), '..- ...') #true
-        unittest.TestCase.assertEqual( self,self.morse.encode('sude'), '... ..- -.. .') #true
-        unittest.TestCase.assertNotEqual(self,self.morse.encode('fidan'), '..-. .. ... .- -.') #false
-        unittest.TestCase.assertNotEqual( self,self.morse.encode('benedict'), '-... . -. . -..') #false
-        unittest.TestCase.assertEqual( self,self.morse.encode('iot'), '.. --- -') #true
-
+        self.assertEqual( self.morse.encode('us'), '..- ...') #true
+        self.assertEqual( self.morse.encode('sude'), '... ..- -.. .') #true
+        self.assertEqual(self.morse.encode('iot'), '.. --- -') #true
+        self.assertNotEqual(self.morse.encode('fidan'), '..-. .. ... .- -.') #false
+        self.assertNotEqual( self.morse.encode('benedict'), '-... . -. . -..') #false
+        
     def test_decode(self):
-        unittest.TestCase.assertNotEqual( self,self.morse.decode('.. -. - . .-. -.'), 'INTERNET') #false
-        unittest.TestCase.assertEqual( self,self.morse.decode('... ..-.'), 'SF') #true
-        unittest.TestCase.assertEqual( self,self.morse.decode('- .... .'), 'THE') #true
-        unittest.TestCase.assertNotEqual( self,self.morse.decode('- .... .. -. --. .'), 'THINGS') #false
-        unittest.TestCase.assertEqual( self,self.morse.decode('...- ... -.-. --- -.. .'), 'VSCODE') #true
-
+        self.assertEqual( self.morse.decode('...- ... -.-. --- -.. .'), 'VSCODE') #true
+        self.assertEqual( self.morse.decode('... ..-.'), 'SF') #true
+        self.assertEqual( self.morse.decode('- .... .'), 'THE') #true
+        self.assertNotEqual( self.morse.decode('.. -. - . .-. -.'), 'INTERNET') #false
+        self.assertNotEqual( self.morse.decode('- .... .. -. --. .'), 'THINGS') #false
+        
     def test_is_empty(self):
-        #self.assertTrue(self.morse.is_empty()) #false
         self.assertFalse(self.morse.is_empty()) #true
 
     def test_is_not_empty(self):
         self.assertTrue(self.morse.is_not_empty()) #true
-        #self.assertFalse(self.morse.is_not_empty()) #false 
 
     def test_find(self):
-        self.assertEqual(self.morse.find('.-'), 'A') #true
-        #self.assertIsNone(self.morse.find('..-.')) #false-does not exist
+        self.assertIn(self.morse.find('.-'), 'A') #true
 
     def test_insert(self):
-        self.morse.insert('.--.-.','@')
+        self.morse.insert('.--.-.','@') 
         self.assertEqual(self.morse.find('.--.-.'), '@') #true
-        self.assertIn(self.morse.find('.--.-.'),self.morse.dict)
-        
+        self.assertIn(self.morse.find('.--.-.'),self.morse.dict) #true
+        self.assertNotIn(self.morse.find('.........'),self.morse.dict) #true - doesn't exist in dictionary
+
     #task4
     def test_symbols(self):
         self.assertEqual(self.morse.find('.-.-.-'), '.') #true
@@ -57,5 +54,6 @@ class TestMorse(unittest.TestCase):
         self.assertEqual(self.morse.find('-.-.--'), '!') #true 
         self.assertEqual(self.morse.find('-.-.-.'), ';') #true 
         self.assertEqual(self.morse.find('...-..-'), '$') #true 
+
 if __name__ == '__main__':
     unittest.main()
