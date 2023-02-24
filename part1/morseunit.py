@@ -31,9 +31,10 @@ class TestMorse(unittest.TestCase):
         self.assertIn(tree.find('.-'), tree.dict) #true
 
     def test_insert(self):
+        self.assertNotIn('@', tree.dict) #false - '@' hasn't implemented yet
         tree.insert('.--.-.','@') 
         self.assertEqual(tree.find('.--.-.'), '@') #true
-        self.assertIn(tree.find('.--.-.'),tree.dict) #true
+        self.assertIn(tree.find('.--.-.'),tree.dict) #true - '@' has been implemented succesfully
         self.assertNotIn(tree.find('.........'),tree.dict) #true - doesn't exist in dictionary
 
     #task4
@@ -57,6 +58,7 @@ class TestMorse(unittest.TestCase):
         self.assertEqual(tree.find('-.-.-.'), ';') #true
         self.assertIn(tree.decode('-.-.-.'), tree.dict) #true - -.-.-.==> ; so it exist in morse dictionary
         self.assertNotEqual(tree.find('-.-.-.'), 'A') #false - -.-.-. ==> ;
+
 
 if __name__ == '__main__':
     print('\n\n\n----------------------------- UNIT TESTING ---------------------------\n')
