@@ -13,7 +13,6 @@ This is what a binary tree morse code looks like:
 
 ---
 ## **Implementations**
----
 
 **Morse Tree Implementation :** *is_empty(), is_not empty(), insert(), find(), decode(), encode(), print_tree() functions are available.*
 
@@ -32,9 +31,8 @@ CODE :           |  TERMINAL PRINT:
 .... | ..
 
 ## **Example Usage**
----
 ### Under Main.py, user can translator from text to morse and morse to text.
-### **Code**:
+Code:
 ```python
 #messages
 print('--------TEXT TO MORSE-------------')
@@ -47,7 +45,7 @@ morse_message = input(('Enter morse to decode ==> '))
 decoded = morse.decode(morse_message)
 print('Decoded message: ' + decoded) 
 ```
-### **Terminal Print**:
+Print:
 ![printing morse tree](images/translator_terminal.jpg)
 
  ### Under Main.py, user can print morse tree.
