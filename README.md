@@ -23,7 +23,7 @@ This is what a binary tree morse code looks like:
 
 ### **Main.py**
 
-❗ User can translator from text to morse and morse to text:
+1. User can translator from text to morse and morse to text:
 ```python
 #messages
 print('--------TEXT TO MORSE-------------')
@@ -48,7 +48,7 @@ Sude Fidan  | ... ..- -.. . / ..-. .. -.. .- -.
 WE LOVE PC ! | .-- . / .-.. --- ...- . / .--. -.-. / -.-.--
 
 
-❗ User can also print morse tree with their position:
+2. User can also print morse tree with their position:
 
 ```python
 #printing morse tree
@@ -59,7 +59,7 @@ Expected Output:
 ![printing morse tree](images/print_tree_terminal.jpg)
 
 ### **Morseunit.py**
-❗ Program has some unit testing if user wants to test. There are 7 tests available:
+1. Program has some unit testing if user wants to test. There are 7 tests available:
 
 1. Testing for encode() function:
 2. Testing for decode() function
@@ -75,8 +75,10 @@ After running all tests expected output:
 ![printing unit testing](images/unit_testing_terminal.jpg)
 
 
-## **Installation**
-User does not need to install any packages.
+## **Installation** 📚
+❗ User does not need to install any packages.
 
-
+## **Maintainers** 🤓
+Sude Fidan(@s2-fidan)
 ## **Referencing**
+
