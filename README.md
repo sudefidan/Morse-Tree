@@ -55,7 +55,6 @@ WE LOVE PC ! | .-- . / .-.. --- ...- . / .--. -.-. / -.-.--
 
 User can also print morse tree with their position:
 ```python
-
 #printing morse tree
 morse.print_tree(morse.root)
 ```
@@ -180,4 +179,4 @@ Sude Fidan(@s2-fidan)
 * https://www.geeksforgeeks.org/morse-code-translator-python/
 * https://www.101computing.net/morse-code-using-a-binary-tree/
 * https://trinket.io/python/36832c4c5d
-* https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links
+
