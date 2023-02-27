@@ -71,65 +71,65 @@ Program has some unit testing if user wants to test. There are 7 tests available
 1. Testing for encode() function
 
     Encode function translate from text to morse. Here are the examples that are done under testing:
-    Assert Function | Message         | Encoded Version     | Message 2   | Comparision
-    -------------   | ------------- | ------------- | ------------- | ------------- 
-    assertIn() | here | .... . .-. . | .. / .- -- / .... . .-. . | True 
-    assertEqual() | Sude Fidan | ... ..- -.. . / ..-. .. -.. .- -. |... ..- -.. . / ..-. .. -.. .- -.| True
-    assertCountEqual() | 2023 | ..--- ----- ..--- ...-- | ..--- ----- ..--- ...-- | True
-    assertEqual() | 2023 + 2017 | ..--- ----- ..--- ...-- / .-.-. / ..--- ----- .---- --... | ..--- ----- ..--- ...-- / .-.-. / ..--- ----- .---- --... | True
-    assertEqual()| FIDAN | ..-. .. -.. .- -. | ..-. .. -.. .- -.| True
-    assertEqual()| WE LOVE PC ! | .-- . / .-.. --- ...- . / .--. -.-. / -.-.-- | .-- . / .-.. --- ...- . / .--. -.-. / -.-.--| True
-    assertNotIn() | benedict |-... . -. . -.. .. -.-. - | -... . -. . -.. | False
-    assertNotEqual() | internet of the things | .. -. - . .-. -. . - / --- ..-. / - .... . / - .... .. -. --. ... | .. -. - . .-. -. . - / --- ..-. / - .... . / - .... .. -. --. | False
+    Assert Function | Message         | Encoded Version     | Message 2   | Comparision| Pass/Fail
+    -------------   | ------------- | ------------- | ------------- | ------------- | -------------
+    assertIn() | here | .... . .-. . | .. / .- -- / .... . .-. . | True |Pass
+    assertEqual() | Sude Fidan | ... ..- -.. . / ..-. .. -.. .- -. |... ..- -.. . / ..-. .. -.. .- -.| True|Pass
+    assertCountEqual() | 2023 | ..--- ----- ..--- ...-- | ..--- ----- ..--- ...-- | True|Pass
+    assertEqual() | 2023 + 2017 | ..--- ----- ..--- ...-- / .-.-. / ..--- ----- .---- --... | ..--- ----- ..--- ...-- / .-.-. / ..--- ----- .---- --... | True|Pass
+    assertEqual()| FIDAN | ..-. .. -.. .- -. | ..-. .. -.. .- -.| True|Pass
+    assertEqual()| WE LOVE PC ! | .-- . / .-.. --- ...- . / .--. -.-. / -.-.-- | .-- . / .-.. --- ...- . / .--. -.-. / -.-.--| True|Pass
+    assertNotIn() | benedict |-... . -. . -.. .. -.-. - | -... . -. . -.. | False|Pass
+    assertNotEqual() | internet of the things | .. -. - . .-. -. . - / --- ..-. / - .... . / - .... .. -. --. ... | .. -. - . .-. -. . - / --- ..-. / - .... . / - .... .. -. --. | False|Pass
 
 2. Testing for decode() function
 
     Decode function translate from morse to text. Here are the examples that are done under testing:
 
-    Assert Function | Message         | Decoded Version     | Message 2   | Comparision
-    -------------   | ------------- | ------------- | ------------- | ------------- 
-    assertIn() | ... ..-. | SF| SF IS MY CAPITALS | True 
-    assertEqual()| ...- ... -.-. --- -.. . | VSCODE |VSCODE|True
-    assertCountEqual() |- .... . / . -. -.. | THE END | THE END| True
-    assertEqual() | ..--- ----- ..--- ...-- / -....- / ..--- ----- ..--- ....- | 2023 - 2024 | 2023 - 2024| True
-    assertNotEqual() | .. -. - . .-. -. | INTERN | INTERNET| False
-    assertNotIn() | - .... .. -. --. . | THINGE | I WAS BORN IN 2002 |False
+    Assert Function | Message         | Decoded Version     | Message 2   | Comparision | Pass/Fail
+    -------------   | ------------- | ------------- | ------------- | ------------- | ------------- 
+    assertIn() | ... ..-. | SF| SF IS MY CAPITALS | True |Pass
+    assertEqual()| ...- ... -.-. --- -.. . | VSCODE |VSCODE|True|Pass
+    assertCountEqual() |- .... . / . -. -.. | THE END | THE END| True|Pass
+    assertEqual() | ..--- ----- ..--- ...-- / -....- / ..--- ----- ..--- ....- | 2023 - 2024 | 2023 - 2024| True|Pass
+    assertNotEqual() | .. -. - . .-. -. | INTERN | INTERNET| False|Pass
+    assertNotIn() | - .... .. -. --. . | THINGE | I WAS BORN IN 2002 |False|Pass
 
 
 3. Testing for is_empty() function:
    
     Is_Empty function returns True if tree is empty. Our morse code tree is already populated under constructor so it is not empty so function will return False.
 
-    Assert Function | Function | True/False
-    -------------   | ------------- | -------------  
-    assertFalse() | tree.is_empty() | True 
+    Assert Function | Function | True/False | Pass/Fail
+    -------------   | ------------- | -------------  | -------------  
+    assertFalse() | tree.is_empty() | True |Pass
 
 4. Testing for is_not_empty() function:
 
     Is_Not_Empty function returns True if tree is not empty. Our morse code tree is already populated under constructor so it is not empty so function will return True.
 
-    Assert Function | Function | True/False
-    -------------   | ------------- | -------------  
-    assertTrue() | tree.is_not_empty() | True 
+    Assert Function | Function | True/False| Pass/Fail
+    -------------   | ------------- | -------------  | -------------
+    assertTrue() | tree.is_not_empty() | True |Pass
 
 5. Testing for find() function:
 
     Find function finds the character from morse code inside of morse dictionary.
 
-    Assert Function | Char | Decoded Version | Location | True/False
-    -------------   | ------------- | -------------  | ------------- | -------------
-    assertIn() | .- | A | *morse.dictionary* | True 
-    assertIn() | ...| S | SUDE| True 
+    Assert Function | Char | Decoded Version | Location | True/False| Pass/Fail
+    -------------   | ------------- | -------------  | ------------- | -------------| -------------
+    assertIn() | .- | A | *morse.dictionary* | True |Pass
+    assertIn() | ...| S | SUDE| True |Pass
 
 1. Testing for insert() function:
 
     Insert function inserts new character to tree with its node and to dictionary.
 
-    Assert Function | Symbol | Morse | Is Inserted ?| True/False
-    -------------   | ------------- | -------------  | ------------- | ------------- 
-    assertNotIn() | @ | .--.-. |No | True 
-    assertIn() | @| .--.-.| Yes | True
-    assertNotIn() | *Not Valid* | .........| No | True 
+    Assert Function | Symbol | Morse | Is Inserted ?| True/False| Pass/Fail
+    -------------   | ------------- | -------------  | ------------- | ------------- | -------------
+    assertNotIn() | @ | .--.-. |No | True |Pass
+    assertIn() | @| .--.-.| Yes | True|Pass
+    assertNotIn() | *Not Valid* | .........| No | True |Pass
 
 7. Testing for additional symbols:
 
@@ -143,24 +143,24 @@ Program has some unit testing if user wants to test. There are 7 tests available
 
     Above additional symbols are added to morse dictionary and tree.
 
-    Assert Function | Message         | Translation     | Message 2   | Comparision
-    -------------   | ------------- | ------------- | ------------- | ------------- 
-    assertEqual() | .-.-.- | . | . | True
-    assertEqual() | ..--.- | _ | _ | True
-    assertIs() | -....- | - | - | True 
-    assertIs() | --...- | ¡ | ¡| True
-    assertEqual() | ..--.. -.-.-- | ?! | ?!| True
-    assertEqual() | -.--. / -.--.- | ( ) | ( )| True
-    assertIn() | ...-..- | $| $€£ | True
-    assertIn() | .----.| ’| ’| True
-    assertIn() | ---...| : | *morse.dictionary* | True
-    assertIn() | + | .-.-. | *morse.dictionary* | True
-    assertCountEqual() | & | .-... | .-... | True
-    assertCountEqual() | - | -....- | -....- | True
-    assertNotIn() | ¿¿¿ | ..-.- ..-.- ..-.- | *morse.dictionary* | False
-    assertNotEqual() | -.-.-. | ;| A | False
-    assertNotEqual() | -.-.-. | *Not Valid* | ” | False
-    assertIsNot() | , | --..-- | ..--.- | False
+    Assert Function | Message         | Translation     | Message 2   | Comparision| Pass/Fail
+    -------------   | ------------- | ------------- | ------------- | ------------- | ------------- 
+    assertEqual() | .-.-.- | . | . | True|Pass
+    assertEqual() | ..--.- | _ | _ | True|Pass
+    assertIs() | -....- | - | - | True |Pass
+    assertIs() | --...- | ¡ | ¡| True|Pass
+    assertEqual() | ..--.. -.-.-- | ?! | ?!| True|Pass
+    assertEqual() | -.--. / -.--.- | ( ) | ( )| True|Pass
+    assertIn() | ...-..- | $| $€£ | True|Pass
+    assertIn() | .----.| ’| ’| True|Pass
+    assertIn() | ---...| : | *morse.dictionary* | True|Pass
+    assertIn() | + | .-.-. | *morse.dictionary* | True|Pass
+    assertCountEqual() | & | .-... | .-... | True|Pass
+    assertCountEqual() | - | -....- | -....- | True|Pass
+    assertNotIn() | ¿¿¿ | ..-.- ..-.- ..-.- | *morse.dictionary* | False|Pass
+    assertNotEqual() | -.-.-. | ;| A | False|Pass
+    assertNotEqual() | -.-.-. | *Not Valid* | ” | False|Pass
+    assertIsNot() | , | --..-- | ..--.- | False|Pass
 
 
 
