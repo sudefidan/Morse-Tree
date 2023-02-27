@@ -71,7 +71,7 @@ Program has some unit testing if user wants to test. There are 7 tests available
 1. Testing for encode() function
 
     Encode function translate from text to morse. Here are the examples that are done under testing:
-    Assert Function | Message         | Encoded Version     | Message 2   | Comparision| Pass/Fail
+    Assert Function | Message         | Encoded Version     | Message 2   | Comparison| Pass/Fail
     -------------   | ------------- | ------------- | ------------- | ------------- | -------------
     assertIn() | here | .... . .-. . | .. / .- -- / .... . .-. . | True |Pass
     assertEqual() | Sude Fidan | ... ..- -.. . / ..-. .. -.. .- -. |... ..- -.. . / ..-. .. -.. .- -.| True|Pass
@@ -86,7 +86,7 @@ Program has some unit testing if user wants to test. There are 7 tests available
 
     Decode function translate from morse to text. Here are the examples that are done under testing:
 
-    Assert Function | Message         | Decoded Version     | Message 2   | Comparision | Pass/Fail
+    Assert Function | Message         | Decoded Version     | Message 2   | Comparison | Pass/Fail
     -------------   | ------------- | ------------- | ------------- | ------------- | ------------- 
     assertIn() | ... ..-. | SF| SF IS MY CAPITALS | True |Pass
     assertEqual()| ...- ... -.-. --- -.. . | VSCODE |VSCODE|True|Pass
@@ -143,7 +143,7 @@ Program has some unit testing if user wants to test. There are 7 tests available
 
     Above additional symbols are added to morse dictionary and tree.
 
-    Assert Function | Message         | Translation     | Message 2   | Comparision| Pass/Fail
+    Assert Function | Message         | Translation     | Message 2   | Comparison| Pass/Fail
     -------------   | ------------- | ------------- | ------------- | ------------- | ------------- 
     assertEqual() | .-.-.- | . | . | True|Pass
     assertEqual() | ..--.- | _ | _ | True|Pass
