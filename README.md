@@ -13,7 +13,7 @@ This is what a binary tree morse code looks like:
 **Morse Tree Implementation :** *Tree is implemented with is_empty(), is_not empty(), insert(), find(), decode(), encode(), print_tree() functions.*
 
 **Unit Test Implementation:** *Test are done using assertIn(), assertNotIn(), assertEqual(), assertNotEqual(), assertCountEqual(), assertTrue(), assertFalse(), assertIs(), assertIsNot().*
-## ✨ **Features**
+## 🎯 **Features**
         Translation from morse code to text (decoding)
 
         Translation from text to morse code(encoding).
@@ -30,7 +30,7 @@ This is what a binary tree morse code looks like:
 
         Unit testing.
 
-## **Example Usage**
+## 🖇️ **Example Usage**
 
 📍 Main.py
 
@@ -175,8 +175,9 @@ After running all tests expected output:
 
 ![printing unit testing](images/unit_testing_terminal.jpg)
 
-
-## 📚 **Installation** 
+## 📚 **Library** 
+Here is the library for unit testing: [unittest](https://docs.python.org/3/library/unittest.html)
+## 📪 **Installation** 
 ❗ User does not need to install any packages.
 
 ## 🤓 **Maintainers** 
