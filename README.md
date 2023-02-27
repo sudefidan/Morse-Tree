@@ -7,7 +7,7 @@ The Morse tree is a binary tree where each node represents a symbol in Morse cod
  
 This is what a binary tree morse code looks like:
 
-![Morse Tree](https://user-images.githubusercontent.com/47689166/57795916-d0c1e300-774f-11e9-8989-7d2dc6b7e531.png) 
+![Morse Tree](https://upload.wikimedia.org/wikipedia/commons/1/19/Morse-code-tree.svg) 
 
 ## 🔧 **Implementations**
 **Morse Tree Implementation :** *Tree is implemented with is_empty(), is_not empty(), insert(), find(), decode(), encode(), print_tree() functions.*
