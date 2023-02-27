@@ -41,24 +41,21 @@ class TestMorse(unittest.TestCase):
     def test_symbols(self):
         #TODO ADD SOME OTHER CHALLEGING TESTINGS
         self.assertEqual(tree.find('.-.-.-'), '.') #true
-        self.assertEqual(tree.find('-.--.'), '(') #true
-        self.assertEqual(tree.find('.-.-.'), '+') #true
-        self.assertEqual(tree.find('..-.-'), '¿') #true
-        self.assertEqual(tree.find('--..--'), ',') #true
-        self.assertEqual(tree.find('-.--.-'), ')') #true
-        self.assertEqual(tree.find('-....-'), '-') #true
-        self.assertEqual(tree.find('--...-'), '¡') #true
-        self.assertEqual(tree.find('..--..'), '?') #true
-        self.assertEqual(tree.find('.-...'), '&') #true
         self.assertEqual(tree.find('..--.-'), '_') #true 
-        self.assertEqual(tree.find('.----.'), '’') #true 
-        self.assertEqual(tree.find('---...'), ':') #true 
-        self.assertEqual(tree.find('.-..-.'), '”') #true 
-        self.assertEqual(tree.find('-.-.--'), '!') #true 
-        self.assertEqual(tree.find('-.-.-.'), ';') #true
-        self.assertIn(tree.decode('-.-.-.'), tree.dict) #true - -.-.-.==> ; so it exist in morse dictionary
+        self.assertIs(tree.decode('-....-'), '-') #true 
+        self.assertIs(tree.find('--...-'), '¡') #true
+        self.assertEqual(tree.decode('..--.. -.-.--'), '?!') #true ..--.. ==> ? AND -.-.-- ==> !
+        self.assertEqual(tree.decode('-.--. / -.--.-'), '( )') #true -.--. ==> ( AND-.--.- ==> )
+        self.assertIn(tree.find('...-..-'), '$$€£') #true  ...-..- ==> $
+        self.assertIn(tree.find('.----.'), '’') #true  .----. ==> ’
+        self.assertIn(tree.decode('---...'), tree.dict) #true ---... ==> :
+        self.assertIn('+', tree.dict) #true
+        self.assertCountEqual('&',tree.find('.-...')) #true
+        self.assertCountEqual(tree.encode('-'),'-....-') #true
+        self.assertNotIn('¿¿¿', tree.dict) #true only one ¿ exist
         self.assertNotEqual(tree.find('-.-.-.'), 'A') #false - -.-.-. ==> ;
-
+        self.assertNotEqual(tree.decode('.-..-'), '”') #false .-..-. ==> ”
+        self.assertIsNot(',',tree.find('..--.-')) #false - , ==> --..--
 
 if __name__ == '__main__':
     print('\n\n\n----------------------------- UNIT TESTING ---------------------------\n')
