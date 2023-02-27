@@ -2,7 +2,8 @@ import unittest
 from morse import MorseTree
 
 class TestMorse(unittest.TestCase):
-    #task3
+    #TASK3
+    #test1
     def test_encode(self):
         self.assertIn( tree.encode('here'), '.. / .- -- / .... . .-. . ') #true - here: .... . .-. .
         self.assertEqual( tree.encode('Sude Fidan'), '... ..- -.. . / ..-. .. -.. .- -.') #true
@@ -12,7 +13,8 @@ class TestMorse(unittest.TestCase):
         self.assertEqual(tree.encode('WE LOVE PC !'), '.-- . / .-.. --- ...- . / .--. -.-. / -.-.--') #true
         self.assertNotIn( tree.encode('benedict'), '-... . -. . -..') #false - benedict: -... . -. . -.. .. -.-. -
         self.assertNotEqual( tree.encode('internet of the things'), '.. -. - . .-. -. . - / --- ..-. / - .... . / - .... .. -. --.') #false - internet of the things:.. -. - . .-. -. . - / --- ..-. / - .... . / - .... .. -. --. ...
-
+    
+    #test2
     def test_decode(self):
         self.assertIn(tree.decode('... ..-.'), 'SF IS MY CAPITALS') #true -  SF: ... ..-.
         self.assertEqual( tree.decode('...- ... -.-. --- -.. .'), 'VSCODE') #true
@@ -20,17 +22,21 @@ class TestMorse(unittest.TestCase):
         self.assertEqual( tree.decode('..--- ----- ..--- ...-- / -....- / ..--- ----- ..--- ....-'), '2023 - 2024') #true
         self.assertNotEqual( tree.decode('.. -. - . .-. -.'), 'INTERNET') #false - INTERNET: .. -. - . .-. -. . -
         self.assertNotIn( tree.decode('- .... .. -. --. .'), 'I WAS BORN IN 2002 ') #false - 2002: ..--- ----- ----- ..---
-
+    
+    #test3
     def test_is_empty(self):
         self.assertFalse(tree.is_empty()) #true
 
+    #test4
     def test_is_not_empty(self):
         self.assertTrue(tree.is_not_empty()) #true
 
+    #test5
     def test_find(self):
         self.assertIn(tree.find('.-'), tree.dict) #true
         self.assertIn(tree.find('...'), 'SUDE') #true
 
+    #test6
     def test_insert(self):
         self.assertNotIn('@', tree.dict) #false - '@' hasn't implemented yet
         tree.insert('.--.-.','@') 
@@ -38,7 +44,8 @@ class TestMorse(unittest.TestCase):
         self.assertIn(tree.find('.--.-.'),tree.dict) #true - '@' has been implemented succesfully
         self.assertNotIn(tree.find('.........'),tree.dict) #true - doesn't exist in dictionary
 
-    #task4
+    #TASK4
+    #test7
     def test_symbols(self):
         self.assertEqual(tree.find('.-.-.-'), '.') #true
         self.assertEqual(tree.find('..--.-'), '_') #true 
