@@ -5,7 +5,7 @@ class TestMorse(unittest.TestCase):
     #TASK3
     #test1
     def test_encode(self):
-        self.assertIn( tree.encode('here'), '.. / .- -- / .... . .-. . ') #true - here: .... . .-. .
+        self.assertIn( tree.encode('here'), '.. / .- -- / .... . .-. . ') #true - here(.... . .-. .) so it exist in .. / .- -- / .... . .-. . (I AM HERE)
         self.assertEqual( tree.encode('Sude Fidan'), '... ..- -.. . / ..-. .. -.. .- -.') #true
         self.assertCountEqual( '..--- ----- ..--- ...--', tree.encode('2023')) #true
         self.assertEqual(tree.encode('2023 + 2017'), '..--- ----- ..--- ...-- / .-.-. / ..--- ----- .---- --...') #true
@@ -21,8 +21,7 @@ class TestMorse(unittest.TestCase):
         self.assertCountEqual('THE END',tree.decode('- .... . / . -. -..')) #true
         self.assertEqual( tree.decode('..--- ----- ..--- ...-- / -....- / ..--- ----- ..--- ....-'), '2023 - 2024') #true
         self.assertNotEqual( tree.decode('.. -. - . .-. -.'), 'INTERNET') #false - INTERNET: .. -. - . .-. -. . -
-        self.assertNotIn( tree.decode('- .... .. -. --. .'), 'I WAS BORN IN 2002 ') #false - 2002: ..--- ----- ----- ..---
-    
+        self.assertNotIn( tree.decode('- .... .. -. --. .'), 'I WAS BORN IN 2002') #false - - .... .. -. --. . ==> thinge    
     #test3
     def test_is_empty(self):
         self.assertFalse(tree.is_empty()) #true
@@ -33,8 +32,8 @@ class TestMorse(unittest.TestCase):
 
     #test5
     def test_find(self):
-        self.assertIn(tree.find('.-'), tree.dict) #true
-        self.assertIn(tree.find('...'), 'SUDE') #true
+        self.assertIn(tree.find('.-'), tree.dict) #true .- ==> A
+        self.assertIn(tree.find('...'), 'SUDE') #true ... ==> S
 
     #test6
     def test_insert(self):

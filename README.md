@@ -23,7 +23,7 @@ This is what a binary tree morse code looks like:
 
 ### **Main.py**
 
-1. User can translator from text to morse and morse to text:
+**User can translator from text to morse and morse to text:**
 ```python
 #messages
 print('--------TEXT TO MORSE-------------')
@@ -48,9 +48,9 @@ Sude Fidan  | ... ..- -.. . / ..-. .. -.. .- -.
 WE LOVE PC ! | .-- . / .-.. --- ...- . / .--. -.-. / -.-.--
 
 
-2. User can also print morse tree with their position:
-
+**User can also print morse tree with their position:**
 ```python
+
 #printing morse tree
 morse.print_tree(morse.root)
 ```
@@ -59,16 +59,83 @@ Expected Output:
 ![printing morse tree](images/print_tree_terminal.jpg)
 
 ### **Morseunit.py**
-1. Program has some unit testing if user wants to test. There are 7 tests available:
+**Program has some unit testing if user wants to test. There are 7 tests available:**
 
 1. Testing for encode() function:
-2. Testing for decode() function
-3. Testing for is_empty() function
+
+Assert Function | Message         | Encoded Version     | Message 2   | Comparision
+-------------   | ------------- | ------------- | ------------- | ------------- 
+assertIn() | here | .... . .-. . | .. / .- -- / .... . .-. . | True 
+assertEqual() | Sude Fidan | ... ..- -.. . / ..-. .. -.. .- -. |... ..- -.. . / ..-. .. -.. .- -.| True
+assertCountEqual() | 2023 | ..--- ----- ..--- ...-- | ..--- ----- ..--- ...-- | True
+assertEqual() | 2023 + 2017 | ..--- ----- ..--- ...-- / .-.-. / ..--- ----- .---- --... | ..--- ----- ..--- ...-- / .-.-. / ..--- ----- .---- --... | True
+assertEqual()| FIDAN | ..-. .. -.. .- -. | ..-. .. -.. .- -.| True
+assertEqual()| WE LOVE PC ! | .-- . / .-.. --- ...- . / .--. -.-. / -.-.-- | .-- . / .-.. --- ...- . / .--. -.-. / -.-.--| True
+assertNotIn() | benedict |-... . -. . -.. .. -.-. - | -... . -. . -.. | False
+assertNotEqual() | internet of the things | .. -. - . .-. -. . - / --- ..-. / - .... . / - .... .. -. --. ... | .. -. - . .-. -. . - / --- ..-. / - .... . / - .... .. -. --. | False
+
+1. Testing for decode() function
+
+Assert Function | Message         | Decoded Version     | Message 2   | Comparision
+-------------   | ------------- | ------------- | ------------- | ------------- 
+assertIn() | ... ..-. | SF| SF IS MY CAPITALS | True 
+assertEqual()| ...- ... -.-. --- -.. . | VSCODE |VSCODE|True
+assertCountEqual() |- .... . / . -. -.. | THE END | THE END| True
+assertEqual() | ..--- ----- ..--- ...-- / -....- / ..--- ----- ..--- ....- | 2023 - 2024 | 2023 - 2024| True
+assertNotEqual() | .. -. - . .-. -. | INTERN | INTERNET| False
+assertNotIn() | - .... .. -. --. . | THINGE | I WAS BORN IN 2002 |False
+
+
+1. Testing for is_empty() function
+
+Assert Function | Function | True/False
+-------------   | ------------- | -------------  
+assertFalse() | tree.is_empty() | True 
+
 4. Testing for is_not_empty() function
-5. Testing for find() function
-6. Testing for insert() function
-7. Testing for additional symbols
    
+Assert Function | Function | True/False
+-------------   | ------------- | -------------  
+assertTrue() | tree.is_not_empty() | True 
+
+5. Testing for find() function
+
+Assert Function | Char | Decoded Version | Location | True/False
+-------------   | ------------- | -------------  | ------------- | -------------
+assertIn() | .- | A | *morse.dictionary* | True 
+assertIn() | ...| S | SUDE| True 
+
+6. Testing for insert() function
+   
+Assert Function | Symbol | Morse | Is Inserted ?| True/False
+-------------   | ------------- | -------------  | ------------- | ------------- 
+assertNotIn() | @ | .--.-. |No | True 
+assertIn() | @| .--.-.| Yes | True
+assertNotIn() | *Not Valid* | .........| No | True 
+
+1. Testing for additional symbols
+   
+Assert Function | Message         | Translation     | Message 2   | Comparision
+-------------   | ------------- | ------------- | ------------- | ------------- 
+assertEqual() | .-.-.- | . | . | True
+assertEqual() | ..--.- | _ | _ | True
+assertIs() | -....- | - | - | True 
+assertIs() | --...- | ¡ | ¡| True
+assertEqual() | ..--.. -.-.-- | ?! | ?!| True
+assertEqual() | -.--. / -.--.- | ( ) | ( )| True
+assertIn() | ...-..- | $| $€£ | True
+assertIn() | .----.| ’| ’| True
+assertIn() | ---...| : | *morse.dictionary* | True
+assertIn() | + | .-.-. | *morse.dictionary* | True
+assertCountEqual() | & | .-... | .-... | True
+assertCountEqual() | - | -....- | -....- | True
+assertNotIn() | ¿¿¿ | ..-.- ..-.- ..-.- | *morse.dictionary* | False
+assertNotEqual() | -.-.-. | ;| A | False
+assertNotEqual() | -.-.-. | *Not Valid* | ” | False
+assertIsNot() | , | --..-- | ..--.- | False
+
+
+
 
 After running all tests expected output:
 
