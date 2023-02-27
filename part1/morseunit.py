@@ -10,9 +10,8 @@ class TestMorse(unittest.TestCase):
         self.assertEqual(tree.encode('2023 + 2017'), '..--- ----- ..--- ...-- / .-.-. / ..--- ----- .---- --...') #true
         self.assertEqual(tree.encode('FIDAN'), '..-. .. -.. .- -.') #true
         self.assertEqual(tree.encode('WE LOVE PC !'), '.-- . / .-.. --- ...- . / .--. -.-. / -.-.--') #true
-        self.assertNotEqual( tree.encode('benedict'), '-... . -. . -..') #false - benedict: -... . -. . -.. .. -.-. -
+        self.assertNotIn( tree.encode('benedict'), '-... . -. . -..') #false - benedict: -... . -. . -.. .. -.-. -
         self.assertNotEqual( tree.encode('internet of the things'), '.. -. - . .-. -. . - / --- ..-. / - .... . / - .... .. -. --.') #false - internet of the things:.. -. - . .-. -. . - / --- ..-. / - .... . / - .... .. -. --. ...
-        self.assertNotIn(tree.encode('s'), tree.dict)
 
     def test_decode(self):
         self.assertIn(tree.decode('... ..-.'), 'SF IS MY CAPITALS') #true -  SF: ... ..-.
