@@ -14,21 +14,14 @@ This is what a binary tree morse code looks like:
 
 **Unit Test Implementation:** *Test are done using assertIn(), assertNotIn(), assertEqual(), assertNotEqual(), assertCountEqual(), assertTrue(), assertFalse(), assertIs(), assertIsNot().*
 ## 🎯 **Features**
-Translation from morse code to text (decoding)
-
-Translation from text to morse code(encoding).
-
-Inserting new characters in to tree and dictionary.
-
-Printing morse tree with each node's position.
-
-Finding characters in morse tree.
-
-Check if tree is empty.
-
-Check if tree is not empty.
-
-Unit testing.
+* Translation from morse code to text (decoding)
+* Translation from text to morse code(encoding).
+* Inserting new characters in to tree and dictionary.
+* Printing morse tree with each node's position.
+* Finding characters in morse tree.
+* Check if tree is empty.
+* Check if tree is not empty.
+* Unit testing.
 
 ## 🖇️ **Example Usage**
 
@@ -178,7 +171,7 @@ After running all tests expected output:
 ## 📚 **Library** 
 Here is the library for unit testing: [unittest](https://docs.python.org/3/library/unittest.html)
 ## 📪 **Installation** 
-❗ User does not need to install any packages.
+User does not need to install any packages.
 
 ## 🤓 **Maintainers** 
 Sude Fidan(@s2-fidan)
