@@ -9,6 +9,16 @@ This is what a binary tree morse code looks like:
 
 ![Morse Tree](https://upload.wikimedia.org/wikipedia/commons/1/19/Morse-code-tree.svg) 
 
+## 🖥️ **How to Run**
+0. Ensure you have [python3](https://www.python.org/download/releases/3.0/) installed.
+   
+   At a command prompt, type `python --version` to ensure you have version 3.
+1. Download or clone the part1 folder from this repository.
+   
+   If you download as a zip file, be sure to unzip it.
+2. To decode and encode, run main.py
+3. To do unit testing, run morseunit.py
+
 ## 🔧 **Implementations**
 **Morse Tree Implementation :** *Tree is implemented with is_empty(), is_not empty(), insert(), find(), decode(), encode(), print_tree() functions.*
 

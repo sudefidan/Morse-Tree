@@ -1,3 +1,4 @@
+#SUDE FIDAN - 21068639
 
 from morse import MorseTree
 
@@ -10,7 +11,7 @@ if __name__ == "__main__":
     d = morse.decode(e)
     assert morse.encode('us') == '..- ...', "Should be ..-" 
     #assert morse.decode('..- ...') == 'us', "Should be ..-"
-
+    
     #messages
     print('--------TEXT TO MORSE-------------')
     text_message = input(('Enter text to encode ==> '))

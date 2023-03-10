@@ -1,9 +1,13 @@
+#SUDE FIDAN - 21068639
+
+#represents each node of Morse Tree
 class Node:
         def __init__(self, value):
             self.value = value
             self.left = None
             self.right = None
 
+#Morse Binary Tree classes for encoding and decoding morse code
 class MorseTree:
     
     def __init__(self):
@@ -11,7 +15,8 @@ class MorseTree:
         self.root = Node('')
         #populate tree with dictionary
         self.populate()
-    
+        
+    #poulate the tree with symbols
     def populate(self):
         self.dict = { 'A':'.-', 'B':'-...','C':'-.-.', 
                     'D':'-..', 'E':'.','F':'..-.', 
@@ -37,12 +42,15 @@ class MorseTree:
         for letter, code in self.dict.items():
             self.insert(code,letter)
 
+    #check if the tree is empty
     def is_empty(self):
         return self.root is None
     
+    #check if the tree is not empty
     def is_not_empty(self):
         return self.root is not  None
 
+    #adds new symbols to tree and dictionary
     def insert(self, code, value):
         node = self.root
         for c in code:
@@ -61,7 +69,8 @@ class MorseTree:
         #add it to dictionary
         self.dict[value]=code
     
-    #text to morse
+    #converts text to morse
+    #E.g. Input: Sude Fidan ==> Output: ... ..- -.. . / ..-. .. -.. .- -.
     def encode(self, text):
         encoded_text = ''
         #convert letters to upper letter , numbers and symbols won't be affected
@@ -72,7 +81,8 @@ class MorseTree:
                 encoded_text += self.dict[char] + ' '
         return encoded_text.strip()
 
-    #morse to text
+    #converts morse to text
+    #E.g Input: .-- . / .-.. --- ...- . / .--. -.-. / -.-.-- ==> Output: WE LOVE PC !
     def decode(self, code):
         decoded = ""
         #split the words: / means space between words in morsecode
@@ -90,6 +100,8 @@ class MorseTree:
             decoded += " "
         return decoded.strip()
     
+    #finding a symbol
+     #E.g Input:.- ==> Output:A
     def find(self, code):
         node = self.root
         for symbol in code:
@@ -106,6 +118,7 @@ class MorseTree:
                 node = node.right
         return node.value
 
+    #prints the whole tree structure
     def print_tree(self, node=None, prefix=''):
         if not node:
             node = self.root
