@@ -138,7 +138,7 @@ Program has some unit testing if user wants to test. There are 7 tests available
     -------------   | ------------- | -------------  | ------------- | ------------- | -------------
     assertNotIn() | @ | .--.-. |No | True |Pass
     assertIn() | @| .--.-.| Yes | True|Pass
-    assertNotIn() | *Not Valid* | .........| No | True |Pass
+    assertNotIn() | *Not Valid* | .........| No | False |Pass
 
 7. Testing for additional symbols:
 
