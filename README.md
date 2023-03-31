@@ -7,7 +7,7 @@ The Morse tree is a binary tree where each node represents a symbol in Morse cod
  
 This is what a binary tree morse code looks like:
 
-![Morse Tree](https://upload.wikimedia.org/wikipedia/commons/1/19/Morse-code-tree.svg) 
+![Morse Tree](images/morsetree.jpg) 
 
 ## 🖥️ **How to Run**
 0. Ensure you have [python3](https://www.python.org/download/releases/3.0/) installed.
@@ -37,7 +37,7 @@ This is what a binary tree morse code looks like:
 
 📍 Main.py
 
-User can translator from text to morse and morse to text:
+User can translate from text to morse and morse to text:
 ```python
 #messages
 print('--------TEXT TO MORSE-------------')
