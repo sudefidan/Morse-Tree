@@ -1,4 +1,4 @@
-# **WORKSHEET2 - MORSE TREE**
+# **MORSE TREE**
 ## 🚀 **Getting Started**
 
 This repository contains python module that creates a binary tree for morse code. By using that module you can do translation between morse code and sentence. 
@@ -183,7 +183,7 @@ Here is the library for unit testing: [unittest](https://docs.python.org/3/libra
 User does not need to install any packages.
 
 ## 🤓 **Maintainers** 
-Sude Fidan(@s2-fidan)
+Sude Fidan(@sudefidan)
 ## 📖  **Referencing** 
 * https://morsecode.world/international/translator.html
 * https://www.geeksforgeeks.org/morse-code-translator-python/
